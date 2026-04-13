@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connected Successfully — VidSync</title>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --color-bg: #f7f6f2;
+  --color-surface: #f9f8f5;
+  --color-border: #d4d1ca;
+  --color-text: #1e1c18;
+  --color-text-muted: #6b6965;
+  --color-text-faint: #bab9b4;
+  --color-primary: #01696f;
+  --color-success: #437a22;
+  --color-success-bg: #d4dfcc;
+  --font-body: 'Satoshi', 'Helvetica Neue', sans-serif;
+  --radius-full: 9999px;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1.25rem;
+}
+[data-theme="dark"] {
+  --color-bg: #141312;
+  --color-surface: #1a1917;
+  --color-border: #363432;
+  --color-text: #d4d2cf;
+  --color-text-muted: #7a7874;
+  --color-text-faint: #4e4d4b;
+  --color-primary: #3d9da8;
+  --color-success: #6daa45;
+  --color-success-bg: #3a4435;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-bg: #141312; --color-surface: #1a1917; --color-border: #363432;
+    --color-text: #d4d2cf; --color-text-muted: #7a7874; --color-text-faint: #4e4d4b;
+    --color-primary: #3d9da8; --color-success: #6daa45; --color-success-bg: #3a4435;
+  }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; }
+body {
+  min-height: 100dvh; display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-body); background: var(--color-bg); color: var(--color-text);
+  padding: 1.5rem;
+}
+.card {
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl); padding: 3rem 2.5rem;
+  text-align: center; max-width: 420px; width: 100%;
+  box-shadow: 0 8px 32px rgba(30,28,24,0.08);
+}
+.icon-wrap {
+  width: 72px; height: 72px; border-radius: var(--radius-full);
+  background: var(--color-success-bg); display: flex; align-items: center;
+  justify-content: center; margin: 0 auto 1.5rem;
+}
+.checkmark {
+  width: 36px; height: 36px; stroke: var(--color-success);
+  stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: draw 0.5s ease forwards 0.2s;
+}
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.title {
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem);
+  font-weight: 700; letter-spacing: -0.025em;
+  color: var(--color-text); margin-bottom: 0.75rem;
+}
+.desc {
+  font-size: clamp(0.875rem, 0.82rem + 0.25vw, 1rem);
+  color: var(--color-text-muted); line-height: 1.65;
+  margin-bottom: 2rem; max-width: 32ch; margin-inline: auto;
+}
+.badge {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: var(--color-success-bg); color: var(--color-success);
+  border-radius: var(--radius-full); padding: 0.35rem 1rem;
+  font-size: 0.8rem; font-weight: 600; margin-bottom: 2rem;
+}
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 0.5rem; font-family: var(--font-body); font-size: 0.9rem;
+  font-weight: 600; padding: 0.65rem 1.75rem; border-radius: var(--radius-full);
+  text-decoration: none; border: 1.5px solid transparent; cursor: pointer;
+  transition: background 180ms ease, border-color 180ms ease;
+}
+.btn-primary { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
+.btn-primary:hover { opacity: 0.88; }
+.divider { height: 1px; background: var(--color-border); margin: 1.5rem 0; }
+.footer-note { font-size: 0.75rem; color: var(--color-text-faint); }
+.logo {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0.4rem; margin-bottom: 2rem; color: var(--color-text-muted);
+  font-size: 0.8rem; font-weight: 600;
+}
+@media (prefers-reduced-motion: reduce) {
+  .checkmark { animation: none; stroke-dashoffset: 0; }
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">
+    <svg width="22" height="22" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+      <rect width="28" height="28" rx="7" fill="var(--color-primary)"/>
+      <path d="M8 10.5C8 9.67 8.67 9 9.5 9h3.5v10H9.5C8.67 19 8 18.33 8 17.5v-7z" fill="white"/>
+      <path d="M15 11l5 3-5 3V11z" fill="white"/>
+    </svg>
+    VidSync
+  </div>
+
+  <div class="icon-wrap" aria-hidden="true">
+    <svg class="checkmark" viewBox="0 0 24 24" role="img" aria-label="Success checkmark">
+      <polyline points="20 6 9 17 4 12"/>
+    </svg>
+  </div>
+
+  <div class="badge">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    TikTok Connected
+  </div>
+
+  <h1 class="title">Authorization Successful</h1>
+  <p class="desc">Your TikTok account has been connected to VidSync. You can now close this window.</p>
+
+  <a href="/" class="btn btn-primary">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    Back to Dashboard
+  </a>
+
+  <div class="divider"></div>
+  <p class="footer-note">You can safely close this tab if you're done.</p>
+</div>
+
+<script>
+  (function(){
+    const r = document.documentElement;
+    const d = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    r.setAttribute('data-theme', d);
+  })();
+</script>
+</body>
+</html>
